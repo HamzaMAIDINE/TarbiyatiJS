@@ -2,7 +2,6 @@
 
 Arabic RTL learning platform for education science and didactics, with account-based progress.
 
-This Node.js edition lives in `Web_NodeJs/`. Run the commands in this guide from that folder. The Flutter app is the sibling [`../Mobile/`](../Mobile/README.md), and the PHP edition is [`../Web_PHP/`](../Web_PHP/README.md). The existing `.env`, `.data` database, dependencies and source assets moved with this edition.
 
 The platform name is **Tarbiyati · تربيتي** across the website, educational exports, and account emails. The production examples use `https://tarbiyati.com`; configure that origin after registering the domain and setting up DNS and HTTPS.
 
