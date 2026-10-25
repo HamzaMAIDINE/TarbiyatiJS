@@ -15,6 +15,7 @@ node_modules/
 cloudflared.exe
 *.exe
 PDFs/
+QCM Exams/
 
 # Build & scratch outputs
 output/
