@@ -1,0 +1,40 @@
+{
+  "name": "tarbiyati",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tarbiyati · تربيتي — education science platform with accounts and persistent learning progress",
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser-smoke.js",
+    "test:print": "node tests/print-smoke.js",
+    "email:check": "node tools/check-email.js",
+    "backup": "node tools/database-backup.js backup",
+    "verify-backup": "node tools/database-backup.js verify",
+    "restore": "node tools/database-backup.js restore",
+    "check": "node tools/check-project.js",
+    "sync:mobile": "node ../Mobile/tool/sync-content.cjs",
+    "check:mobile": "node ../Mobile/tool/sync-content.cjs --check",
+    "check:production": "npm run check && npm test && npm audit"
+  },
+  "dependencies": {
+    "nodemailer": "^10.2.1"
+  },
+  "files": [
+    "server.js",
+    "index.html",
+    "backend/",
+    "scripts/",
+    "styles/",
+    "pages/",
+    "assets/",
+    "PDFs/",
+    "content/exams/",
+    "tools/check-email.js",
+    "tools/database-backup.js"
+  ]
+}

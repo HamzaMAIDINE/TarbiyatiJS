@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-auth="loading">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="Tarbiyati · تربيتي">
+  <script src="../scripts/theme.js"></script>
+  <script src="../scripts/ui-actions.js" defer></script>
+  <title>بنك أسئلة الـ QCM واختبارات علوم التربية | منصة تربيتي | Tarbiyati</title>
+  <link rel="preload" href="../assets/fonts/Cairo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/interface.css">
+  <link rel="stylesheet" href="../styles/assessments.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+  <aside class="site-sidebar" id="siteSidebar" aria-label="القائمة الرئيسية">
+    <button class="icon-button sidebar-close" type="button" data-click="closeMobileMenu" aria-label="إغلاق القائمة"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+    <a href="../index.html" class="site-brand"><span class="site-brand-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg></span><span><strong>تربيتي <span class="site-brand-latin" lang="en" dir="ltr">Tarbiyati</span></strong><small>لعلوم التربية والديداكتيك</small></span></a>
+    <nav aria-label="التنقل الرئيسي"><div class="nav-group"><span class="nav-group-label">تعلم واكتشف</span><ul class="site-nav"><li><a href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg><span>مساحة التعلم</span></a></li>
+<li><a href="modules.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg><span>المجزوءات</span></a></li>
+<li><a href="mindmaps.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4H5v4m7-4h7v4"/></svg><span>الخرائط الذهنية</span></a></li>
+</ul></div>
+<div class="nav-group"><span class="nav-group-label">تدرب وراجع</span><ul class="site-nav"><li><a href="quiz.html" class="active" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 5h3"/></svg><span>اختبر معرفتك</span></a></li>
+<li><a href="exams.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg><span>الامتحانات السابقة</span></a></li>
+<li><a href="simulator.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="m10 7 5 3-5 3zM8 21h8m-4-4v4"/></svg><span>المحاكي الصفي</span></a></li>
+<li><a href="flashcards.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="14" height="14" rx="2"/><path d="M17 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2m4-6h6m-6 4h4"/></svg><span>بطاقات المراجعة</span></a></li>
+</ul></div>
+<div class="nav-group"><span class="nav-group-label">مكتبتك التربوية</span><ul class="site-nav"><li><a href="resources.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h4V3zm7 0v18h4V3zm7 2 4-1 3 16-4 1z"/></svg><span>المراجع والمصادر</span></a></li>
+<li><a href="glossary.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8m-8 4h5m-5 4h8"/></svg><span>المعجم التربوي</span></a></li>
+<li><a href="fiche-generator.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h10l6 6v12H4zM14 3v6h6M8 13h8m-8 4h5"/></svg><span>تخطيط الجذاذات</span></a></li>
+</ul></div>
+</nav>
+    <div class="sidebar-bottom"><span>مساحة للفهم، والتعلم، والممارسة.</span></div>
+  </aside>
+  <div class="sidebar-overlay" data-click="closeMobileMenu" aria-hidden="true"></div>
+  <header class="site-topbar">
+    <button class="icon-button menu-trigger" type="button" data-click="toggleMobileMenu" aria-label="فتح القائمة الرئيسية" aria-expanded="false" aria-controls="siteSidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="page-location"><a href="../index.html">تربيتي</a><span aria-hidden="true">/</span><strong>اختبر معرفتك</strong></div>
+    <div class="topbar-actions">
+      <button class="global-search-trigger" type="button" data-click="openQuickSearch" aria-label="البحث في المنصة"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>ابحث عن مفهوم أو درس...</span><kbd dir="ltr">Ctrl K</kbd></button>
+      <button id="themeToggleBtn" class="icon-button" type="button" data-click="toggleTheme" aria-label="تفعيل الوضع الليلي"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/></svg></button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-wrapper" id="main-content" tabindex="-1">
+    <div class="section-head">
+      <div>
+        <h1>اختبر معرفتك</h1>
+        <p>أسئلة مفاهيمية ووضعيات تطبيقية، مع ترتيب جديد للأسئلة والاختيارات في كل محاولة.</p>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span id="savedQuizProgress" class="card-badge" role="status"></span>
+        <span id="quizTimerBadge" class="card-badge" hidden dir="ltr">⏱️ 20:00</span>
+        <button id="modeToggleBtn" data-quiz-config aria-pressed="false" class="btn btn-secondary btn-sm" data-click="toggleExamMode">محاكاة المباراة</button>
+      </div>
+    </div>
+
+    <aside id="quizSavedExam" class="assessment-saved-exam" role="status" hidden><p id="quizSavedExamMessage"></p><a id="quizSavedExamLink" class="text-link" href="exams.html">العودة إلى الامتحان ←</a></aside>
+    <div class="quiz-bank-overview" aria-label="محتوى بنك الأسئلة"><div><strong id="quizBankTotal">—</strong><span>سؤالاً للمراجعة</span></div><div><strong id="quizBankSituations">—</strong><span>وضعية تطبيقية مع تعليل</span></div><div><strong id="quizBankArchive">—</strong><span>سؤالاً من أوراق الامتحانات</span></div><a class="text-link" href="exams.html">الامتحانات الكاملة 2023–2025 ←</a></div>
+    <section class="quiz-session-controls" aria-label="تخصيص الاختبار">
+      <div class="quiz-control-grid">
+        <label for="catSelect">المجال<select id="catSelect" data-quiz-config data-change="applyFilters"><option value="all">جميع المجالات</option><option value="نظريات التعلم">نظريات التعلم</option><option value="سيكولوجية التربية والنمو">علم النفس والنمو</option><option value="الديداكتيك والمثلث الديداكتيكي والظواهر">الديداكتيك والظواهر الصفية</option><option value="البيداغوجيات الوظيفية">البيداغوجيات الوظيفية</option><option value="التقويم والدعم">التقويم والدعم</option><option value="النظام التربوي المغربي والحياة المدرسية">النظام التربوي والحياة المدرسية</option></select></label>
+        <label for="diffSelect">الصعوبة<select id="diffSelect" data-quiz-config data-change="applyFilters"><option value="all">جميع المستويات</option><option value="سهل">سهل</option><option value="متوسط">متوسط</option><option value="متقدم">متقدم</option></select></label>
+        <label for="kindSelect">نوع الأسئلة<select id="kindSelect" data-quiz-config data-change="applyFilters"><option value="all">مفاهيم ووضعيات</option><option value="concept">أسئلة مفاهيمية</option><option value="situation">وضعيات تطبيقية</option></select></label>
+        <label for="lengthSelect">حجم المحاولة<select id="lengthSelect" data-quiz-config data-change="applyFilters"><option value="10">10 أسئلة</option><option value="20" selected>20 سؤالاً</option><option value="30">30 سؤالاً</option><option value="all">كل الأسئلة المطابقة</option></select></label>
+        <label for="sourceSelect">مصدر الأسئلة<select id="sourceSelect" data-quiz-config data-change="applyFilters"><option value="all">جميع المصادر</option><option value="training">أسئلة تربيتي ووضعياتها</option></select></label>
+      </div>
+      <div class="quiz-session-meta"><p id="quizPoolStatus" role="status" aria-live="polite">جارٍ إعداد الاختبار...</p><button type="button" class="btn btn-outline btn-sm" data-new-quiz data-click="restartQuiz">محاولة جديدة ↻</button></div>
+      <p class="quiz-order-note">الأسئلة والاختيارات تتغير في كل محاولة. في المحاكاة، دقيقة لكل سؤال ويظهر التصحيح عند النهاية.</p>
+    </section>
+    <div class="quiz-attempt-status"><span id="questionCounter">جارٍ إعداد الأسئلة...</span><span id="quizAnsweredCount"></span><div class="quiz-attempt-meter" aria-hidden="true"><div id="quizProgressBar"></div></div></div>
+    <nav id="quizQuestionMap" class="quiz-question-map" aria-label="التنقل بين أسئلة الاختبار" hidden><div class="quiz-map-actions"><details><summary>خريطة الأسئلة<span>✓ إجابة محفوظة · الإطار يحدد السؤال الحالي</span></summary><div id="quizQuestionNav" class="quiz-map-grid"></div></details><button id="quizNextUnanswered" class="btn btn-outline btn-sm" type="button">السؤال غير المجاب التالي ←</button></div></nav>
+    <div id="quizRequestError" class="activity-error" role="alert" hidden><p id="quizRequestMessage"></p><button id="quizRequestRetry" type="button" class="btn btn-outline btn-sm">إعادة المحاولة</button></div>
+    <div class="empty-library" id="quizEmptyState" hidden><h2>لا توجد أسئلة تطابق اختيارك</h2><p>غير المجال أو الصعوبة أو نوع الأسئلة، أو اعرض جميع الأسئلة.</p><button type="button" class="btn btn-outline" data-click="clearQuizFilters">إعادة ضبط الاختيارات</button></div>
+
+    <!-- QUIZ CARD CONTAINER -->
+    <div class="quiz-box" id="quizContainer" hidden>
+      <div class="quiz-meta">
+        <div>
+          <span id="qCategoryBadge" class="card-badge">نظريات التعلم</span>
+          <span id="qKindBadge" class="card-badge"></span>
+          <span id="qDiffBadge" class="widget-tag" style="margin-right: 8px;">متوسط</span>
+        </div>
+      </div>
+
+      <p class="quiz-situation-context" id="qScenario" hidden></p>
+      <h3 class="quiz-q-title" id="qTitle" tabindex="-1">
+        نص السؤال يظهر هنا...
+      </h3>
+      <figure id="qFigure" class="question-figure" hidden><svg viewBox="0 0 120 120" width="100" height="100" role="img" aria-label="دائرة غير مكتملة"><circle cx="60" cy="60" r="42" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="225 40"/></svg><figcaption>الشكل المشار إليه في السؤال</figcaption></figure>
+      <p id="qOrigin" class="quiz-order-note" hidden></p>
+
+      <div class="quiz-options" id="qOptions">
+        <!-- Options injected via JS -->
+      </div>
+
+      <!-- EXPLANATION BOX (PRACTICE MODE) -->
+      <div class="quiz-explanation" id="qExplanation" role="status" aria-live="polite">
+        <h4 style="color: var(--primary); margin-bottom: 8px; font-weight: 800;">💡 التعليل البيداغوجي الموجه:</h4>
+        <p id="qExpText" style="line-height: 1.7; font-size: 0.95rem; margin-bottom: 10px;"></p>
+        <div style="font-size: 0.85rem; color: var(--text-muted);" id="qExpSource"></div>
+        <div id="qLearningReferences"></div>
+      </div>
+
+      <!-- NAVIGATION BUTTONS -->
+      <div class="quiz-question-navigation">
+        <button class="btn btn-outline btn-sm" data-click="prevQuestion" id="prevBtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg><span>السابق</span></button>
+        <span id="scoreTrackerText" style="font-weight: 800; color: var(--primary);">الدرجة الحالية: 0</span>
+        <button class="btn btn-primary btn-sm" data-click="nextQuestion" id="nextBtn">التالي ←</button>
+      </div>
+    </div>
+
+    <!-- FINAL REPORT MODAL / CONTAINER (HIDDEN INITIALLY) -->
+    <div id="quizFinalReport" hidden style=" background: var(--gray-card); border: 2px solid var(--primary-accent); border-radius: var(--radius-md); padding: 35px; text-align: center; box-shadow: var(--shadow-lg);">
+      <h3 id="quizResultTitle" tabindex="-1" style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin-bottom: 15px;">🎉 تقرير نتيجة الاختبار</h3>
+      <div style="font-size: 3rem; font-weight: 900; color: var(--secondary); margin-bottom: 15px;" id="finalScorePercent">0%</div>
+      <p id="finalScoreMsg" style="font-size: 1.1rem; line-height: 1.8; max-width: 650px; margin: 0 auto 25px;"></p>
+
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-outline" id="retryQuizSave" hidden data-click="finishQuiz">إعادة حفظ النتيجة</button>
+        <button class="btn btn-primary" data-new-quiz data-click="restartQuiz">محاولة جديدة بترتيب مختلف</button>
+        <a href="modules.html" class="btn btn-outline">📚 مراجعة الدروس في الموسوعة</a>
+      </div>
+      <div class="quiz-review"><h4>راجع إجاباتك</h4><div id="quizReviewControls"></div><div id="quizAnswerReview"></div></div>
+    </div>
+
+    <section class="learning-history" aria-labelledby="history-heading"><h2 id="history-heading">نتائجك السابقة</h2><div id="quizHistory"></div><div id="quizWeaknesses"></div></section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer"><span>تربيتي · علوم التربية والديداكتيك</span><a href="resources.html">اكتشف المراجع والمصادر <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a></footer>
+
+  <script src="../scripts/accounts.js"></script>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/disclosure-motion.js"></script>
+  <script src="../scripts/assessment-review.js"></script>
+  <script src="../scripts/lesson-references.js"></script>
+  <script src="../scripts/quiz.js"></script>
+</body>
+</html>

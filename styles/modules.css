@@ -1,0 +1,40 @@
+.module-contents { margin: 1rem 0 2rem; padding: 1rem 1.25rem; background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: var(--radius-md, 12px); }
+.module-contents h3 { margin: 0 0 .65rem; font-size: 1rem; }
+.module-contents ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 1.75rem; margin: 0; padding-inline-start: 1.4rem; }
+.module-contents a { color: var(--text-main); text-decoration-color: var(--primary); text-underline-offset: .25em; }
+.module-reading-note { color: var(--text-muted); font-size: .9rem; line-height: 1.9; }
+.module-scope { padding: .85rem 1rem; border-inline-start: 3px solid var(--primary); background: var(--gray-bg); margin-block: 1rem; line-height: 1.9; }
+.lesson-objectives { margin-block: .8rem 1.25rem; color: var(--text-muted); font-size: .92rem; }
+.lesson-objectives h4 { font-size: .95rem; }
+.lesson-objectives ul, .module-checkpoint ul { padding-inline-start: 1.4rem; }
+.lesson-practice { margin-top: 1.5rem; padding: 1.1rem; border: 1px solid var(--gray-border); background: var(--gray-bg); border-radius: 10px; }
+.lesson-practice h4 { margin-top: 0; }
+.lesson-answer { margin-top: .8rem; }
+.lesson-answer summary { color: var(--primary); cursor: pointer; padding-block: .5rem; font-weight: 700; }
+.lesson-answer p { margin-top: .6rem; }
+.module-checkpoint { padding: 1.25rem; margin-top: 2rem; border: 1px solid var(--primary); border-radius: 10px; line-height: 1.9; }
+.lesson-section { scroll-margin-top: 100px; min-width: 0; }
+.module-workshop { scroll-margin-top: 100px; margin-block: 2rem; padding: 1.25rem; border: 1px solid var(--primary); border-radius: 12px; background: var(--gray-bg); line-height: 1.9; }
+.module-workshop:focus { outline: 2px solid var(--primary); outline-offset: 6px; }
+.module-workshop h3 { margin-block: .5rem 1rem; }
+.module-workshop li + li { margin-top: .6rem; }
+.workshop-answer { border-block: 1px solid var(--gray-border); padding-block: .65rem; margin-block: 1.25rem; }
+.workshop-pitfalls > div { margin-block: 1rem; }
+.workshop-pitfalls dt { font-weight: 700; }
+.workshop-pitfalls dd { margin: .35rem 0 0; color: var(--text-muted); }
+.workshop-links a { color: var(--primary); text-underline-offset: .2em; }
+.lesson-section:focus { outline: 2px solid var(--primary); outline-offset: 6px; }
+.lesson-section h3 a { color: inherit; text-decoration: none; }
+.lesson-section h3 a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.lesson-example { border-inline-start: 3px solid var(--primary); padding: 1rem 1.25rem; margin: 1.25rem 0; background: var(--gray-bg); border-radius: 8px; }
+.lesson-example h4 { margin-top: 0; }
+.lesson-example p:last-child { margin-bottom: 0; }
+.lesson-check { margin: 1rem 0; padding: 1rem; border: 1px dashed var(--gray-border); border-radius: 8px; }
+.lesson-sources { border-top: 1px solid var(--gray-border); margin-top: 1.5rem; padding-top: 1rem; font-size: .88rem; }
+.lesson-sources h4 { margin: 0 0 .5rem; }
+.lesson-source-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.lesson-source-list li { display: flex; flex-wrap: wrap; gap: .3rem .75rem; align-items: baseline; }
+.lesson-source-list a { overflow-wrap: anywhere; color: var(--primary); }
+.lesson-source-list span { color: var(--text-muted); font-size: .85em; }
+@media (max-width: 680px) { .module-contents ol { grid-template-columns: minmax(0, 1fr); } .lesson-example { padding: .9rem; } }
+@media print { .lesson-sources { break-inside: avoid; } .lesson-example { background: none; } }

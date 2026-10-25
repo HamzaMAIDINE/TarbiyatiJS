@@ -1,0 +1,13 @@
+'use strict';
+// Render the existing brand using local HTML/fonts; no external image service.
+const fs=require('node:fs');const path=require('node:path');const os=require('node:os');const {spawnSync}=require('node:child_process');const {pathToFileURL}=require('node:url');
+const root=path.resolve(__dirname,'..');const output=path.join(root,'assets/branding');fs.mkdirSync(output,{recursive:true});
+fs.copyFileSync(path.resolve(root,'../Mobile/assets/images/app-icon.png'),path.join(output,'logo.png'));
+const font=pathToFileURL(path.join(root,'assets/fonts/Cairo.woff2')).href;const logo=pathToFileURL(path.join(output,'logo.png')).href;
+const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'tarbiyati-social-'));const html=path.join(temporary,'card.html');
+fs.writeFileSync(html,`<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><style>@font-face{font-family:Cairo;src:url('${font}')}*{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden}body{font-family:Cairo,sans-serif;background:#f7f8f5;color:#24352f;padding:58px 72px}.card{height:514px;border:2px solid #dce3d8;border-radius:32px;background:#eaf0e3;padding:40px 52px;display:flex;align-items:center;gap:48px}.content{flex:1}.brand{font-size:32px;font-weight:800;color:#244c42}h1{font-size:48px;line-height:1.6;margin:20px 0 12px;font-weight:800}p{font-size:23px;line-height:1.8;margin:0;color:#465c4d}img{width:210px;height:210px;border-radius:40px}.url{font-size:18px;margin-top:20px;direction:ltr;text-align:right}</style><div class="card"><div class="content"><div class="brand">تربيتي · Tarbiyati</div><h1>فهم أعمق لعلوم التربية.<br>تعليم أفضل.</h1><p>الدروس، الخرائط الذهنية، الاختبارات والجذاذات.</p><div class="url">tarbiyati.site.je</div></div><img src="${logo}" alt=""></div></html>`);
+const chrome=process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const target=path.join(output,'social-card.png');const result=spawnSync(chrome,['--headless=new','--disable-gpu','--no-first-run','--hide-scrollbars','--force-device-scale-factor=1','--window-size=1200,630','--virtual-time-budget=2000','--user-data-dir='+path.join(temporary,'chrome'),'--screenshot='+target,pathToFileURL(html).href],{encoding:'utf8',windowsHide:true,timeout:30000});
+if(result.status!==0||!fs.existsSync(target))throw new Error('Social-card rendering failed');
+const bytes=fs.readFileSync(target);if(bytes.readUInt32BE(16)!==1200||bytes.readUInt32BE(20)!==630)throw new Error('Unexpected social-card dimensions');
+console.log(JSON.stringify({file:'assets/branding/social-card.png',width:1200,height:630,bytes:bytes.length}));

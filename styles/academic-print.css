@@ -1,0 +1,214 @@
+/* Amiri is distributed under the SIL Open Font License in assets/fonts/OFL-Amiri.txt. */
+@font-face { font-family: Amiri; src: url('../assets/fonts/Amiri-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: Amiri; src: url('../assets/fonts/Amiri-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+/* Noto fonts are bundled for offline PDFs; licenses are in assets/fonts/OFL-Noto*.txt. */
+@font-face { font-family: 'Noto Naskh Arabic'; src: url('../assets/fonts/NotoNaskhArabic-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Noto Naskh Arabic'; src: url('../assets/fonts/NotoNaskhArabic-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Noto Sans Arabic'; src: url('../assets/fonts/NotoSansArabic-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Noto Sans Arabic'; src: url('../assets/fonts/NotoSansArabic-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+#academicPrintDocument { display: none; }
+.academic-print-hint { color: var(--text-muted); font-size: 14px; line-height: 1.9; margin-block: 12px 18px; }
+
+@media print {
+  html { color-scheme: light !important; background: #fff !important; }
+  @page {
+    size: A4 portrait; margin: 17mm 15mm 18mm; background: #fff;
+    @top-right { content: none; }
+    @bottom-left { content: 'وثيقة تربوية · تربيتي | Tarbiyati'; font: 8pt 'Noto Sans Arabic', Amiri, serif; color: #506158; }
+    @bottom-right { content: counter(page) ' / ' counter(pages); direction: ltr; font: 9pt 'Segoe UI', sans-serif; color: #506158; }
+  }
+  @page academic-landscape { size: A4 landscape; }
+  @page academic-portrait { size: A4 portrait; }
+  @page academic-cover { size: A4 portrait; @bottom-left { content: none; } @bottom-right { content: none; } }
+  @page fiche-ar { size: A4 landscape; margin: 15mm; @top-right { content: none; } @bottom-left { content: none; } }
+  @page fiche-fr { size: A4 landscape; margin: 15mm; @top-right { content: none; } @bottom-left { content: none; } }
+  body.academic-printing { display: block !important; margin: 0 !important; padding: 0 !important; min-height: 0; background: #fff !important; }
+  body.academic-printing > :not(#academicPrintDocument) { display: none !important; }
+  #academicPrintDocument { display: block !important; width: auto; margin: 0; padding: 0; page: academic-portrait; font: 11.5pt/1.65 Amiri, 'Traditional Arabic', serif; color: #202823; direction: rtl; text-align: right; }
+  #academicPrintDocument[data-kind="lesson"] { page: fiche-ar; }
+  #academicPrintDocument[data-kind="lesson"][lang="fr"] { page: fiche-fr; direction: ltr; text-align: left; font-family: 'Times New Roman', Times, Amiri, serif; font-size: 11pt; line-height: 1.4; }
+  #academicPrintDocument, #academicPrintDocument * { --primary: #25473d; --primary-accent: #25473d; --text-main: #202823; --text-muted: #506158; --gray-bg: #fff; --gray-card: #fff; --gray-border: #bbc6bf; --soft-green: #f1f4f0; box-shadow: none !important; text-shadow: none !important; animation: none !important; transition: none !important; }
+  #academicPrintDocument * { font-family: inherit; }
+  #academicPrintDocument:not([data-kind="lesson"]) { font-family: 'Noto Naskh Arabic', Amiri, 'Traditional Arabic', serif; font-size: 12pt; line-height: 1.75; }
+  #academicPrintDocument:not([data-kind="lesson"]) :is(h1, h2, h3, h4) { font-family: 'Noto Sans Arabic', 'Segoe UI', Amiri, sans-serif; }
+  #academicPrintDocument :is(.academic-header, .academic-lead, .academic-section-label) { break-after: avoid-page; }
+  #academicPrintDocument h1, #academicPrintDocument h2, #academicPrintDocument h3, #academicPrintDocument h4 { color: #25473d !important; font-weight: 700; break-after: avoid; page-break-after: avoid; line-height: 1.5; }
+  #academicPrintDocument h1 { font-size: 22pt; margin-block: 2mm 3mm; }
+  #academicPrintDocument h2 { font-size: 15pt; margin-block: 6mm 3mm; }
+  #academicPrintDocument h3 { font-size: 13pt; margin-block: 4mm 2mm; }
+  #academicPrintDocument h4 { font-size: 11.5pt; margin-block: 3mm 1.5mm; }
+  #academicPrintDocument p, #academicPrintDocument li, #academicPrintDocument dd { orphans: 3; widows: 3; }
+  #academicPrintDocument p { margin-block: 2mm 3mm; }
+  #academicPrintDocument ul, #academicPrintDocument ol { padding-inline-start: 6mm; margin-block: 3mm; }
+  #academicPrintDocument a { color: #25473d !important; text-decoration: none; }
+  #academicPrintDocument svg, #academicPrintDocument button { display: none; }
+  #academicPrintDocument .academic-header { break-inside: avoid; margin-bottom: 6mm; }
+  #academicPrintDocument .academic-masthead { display: flex; align-items: baseline; gap: 4mm; padding-block: 0 3mm; border-bottom: 1pt solid #b9cfc6; font-family: 'Noto Sans Arabic', Amiri, sans-serif; font-size: 8pt; color: #506158; }
+  #academicPrintDocument .academic-masthead > strong { color: #25473d; font-size: 15pt; font-weight: 700; }
+  #academicPrintDocument .academic-masthead time { margin-inline-start: auto; white-space: nowrap; font-size: 8pt; }
+  #academicPrintDocument .academic-title { display: flex; justify-content: space-between; align-items: center; gap: 5mm; margin-top: 5mm; }
+  #academicPrintDocument .academic-title-copy { min-width: 0; }
+  #academicPrintDocument .academic-eyebrow { display: block; font-family: 'Noto Sans Arabic', Amiri, sans-serif; font-size: 9pt; font-weight: 600; color: #59766a; }
+  #academicPrintDocument .academic-title h1 { font-size: 22pt; line-height: 1.65; margin-block: 1mm 2mm; }
+  #academicPrintDocument .academic-title p { font-size: 11.5pt; color: #506158; margin: 0; }
+  #academicPrintDocument .academic-section-number { display: block; flex-shrink: 0; min-width: 15mm; padding: 2mm 1mm; border-block: 1pt solid #b9cfc6; font: 600 24pt/1.4 'Noto Sans Arabic', sans-serif; text-align: center; color: #59766a; direction: ltr; }
+  #academicPrintDocument .academic-lead, #academicPrintDocument .academic-intro { padding: 4mm 5mm; margin-block: 4mm 5mm; border-inline-start: 2.5pt solid #6e9985; background: #f1f6f3 !important; border-radius: 2mm; font-size: 12pt; line-height: 1.8; color: #344d42; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  #academicPrintDocument .academic-ministry-masthead { text-align: center; padding-bottom: 2mm; border-bottom: 1pt solid #bbc6bf; }
+  #academicPrintDocument .academic-ministry-masthead img { display: inline-block; height: 18mm; width: auto; max-width: 95mm; object-fit: contain; }
+  #academicPrintDocument .fiche-print-sheet { width: 100%; padding: 0; margin: 0; border: 0; border-radius: 0; }
+  #academicPrintDocument .fiche-print-layout { margin: 0; border: 0; font: inherit; }
+  #academicPrintDocument .fiche-print-layout > thead { break-inside: avoid; page-break-inside: avoid; }
+  #academicPrintDocument .fiche-print-layout > thead > tr > td,
+  #academicPrintDocument .fiche-print-layout > tbody > tr > td { padding: 0; border: 0; font: inherit; }
+  #academicPrintDocument .fiche-print-layout > tbody > tr { break-inside: auto; page-break-inside: auto; }
+  #academicPrintDocument .fiche-print-layout .fiche-page-header { break-inside: avoid; }
+  #academicPrintDocument .fiche-print-sheet .sheet-steps-wrap { overflow: visible; border-radius: 0; }
+  #academicPrintDocument .fiche-print-sheet .sheet-steps-table { min-width: 0; }
+  #academicPrintDocument .fiche-print-sheet .sheet-footer { break-inside: avoid; }
+  #academicPrintDocument .fiche-print-sheet .sheet-steps-table tbody tr:last-child { break-after: avoid; }
+  #academicPrintDocument table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-block: 3mm 5mm; font-size: 10.5pt; color: #202823; }
+  #academicPrintDocument thead { display: table-header-group; }
+  #academicPrintDocument tfoot { display: table-footer-group; }
+  #academicPrintDocument th, #academicPrintDocument td { padding: 2mm 3mm; border: .5pt solid #bbc6bf; font-size: inherit; line-height: 1.65; text-align: start; vertical-align: top; white-space: normal; overflow-wrap: anywhere; }
+  #academicPrintDocument th { background: #f1f4f0 !important; color: #25473d !important; font-weight: 700; }
+  #academicPrintDocument tr { break-inside: avoid; page-break-inside: avoid; }
+  #academicPrintDocument tr.academic-long-row { break-inside: auto; page-break-inside: auto; }
+  #academicPrintDocument .academic-resource, #academicPrintDocument .academic-map-branch, #academicPrintDocument .academic-module { page: academic-portrait; break-before: page; }
+  #academicPrintDocument .academic-landscape { page: academic-landscape; }
+  #academicPrintDocument .academic-resource:first-child, #academicPrintDocument .academic-module:first-child { break-before: auto; }
+  #academicPrintDocument .academic-contents h2 { font-size: 13pt; margin-block: 5mm 2mm; }
+  #academicPrintDocument .academic-contents-list { list-style: decimal-leading-zero; padding-inline-start: 9mm; }
+  #academicPrintDocument .academic-contents-list li { padding: 1.6mm 2mm; border-bottom: .5pt solid #d7e3dc; break-inside: avoid; line-height: 1.55; }
+  #academicPrintDocument .academic-contents-list li::marker { font: 600 10pt 'Noto Sans Arabic', sans-serif; color: #59766a; }
+  #academicPrintDocument .academic-contents-list a { display: block; }
+  #academicPrintDocument .academic-contents-list a > span { font-size: 11.5pt; font-weight: 700; }
+  #academicPrintDocument .academic-module-cover { page: academic-cover; break-after: page; min-height: 256mm; box-sizing: border-box; padding: 12mm; border: .7pt solid #b9cfc6; border-top: 4pt solid #254f43; display: flex; flex-direction: column; background: linear-gradient(145deg, #f1f6f3 0%, #fff 65%) !important; }
+  #academicPrintDocument .academic-cover-brand { display: flex; align-items: baseline; gap: 4mm; padding-bottom: 6mm; border-bottom: .7pt solid #b9cfc6; font-family: 'Noto Sans Arabic', Amiri, sans-serif; color: #506158; font-size: 9pt; }
+  #academicPrintDocument .academic-cover-brand strong { color: #25473d; font-size: 19pt; }
+  #academicPrintDocument .academic-cover-main { margin-block: 28mm 15mm; }
+  #academicPrintDocument .academic-cover-kicker { display: block; color: #59766a; font: 600 11pt/1.7 'Noto Sans Arabic', Amiri, sans-serif; }
+  #academicPrintDocument .academic-module-cover h1 { font-size: 36pt; line-height: 1.7; margin-block: 5mm 4mm; letter-spacing: 0; }
+  #academicPrintDocument .academic-cover-subtitle { font-size: 17pt; color: #344d42; }
+  #academicPrintDocument .academic-cover-description { max-width: 126mm; margin-top: 5mm; font-size: 13pt; line-height: 1.9; color: #506158; }
+  #academicPrintDocument .academic-cover-stats { display: flex; gap: 15mm; padding-block: 6mm; border-block: .7pt solid #b9cfc6; }
+  #academicPrintDocument .academic-cover-stats > div { display: flex; flex-direction: column; gap: 1mm; }
+  #academicPrintDocument .academic-cover-stats strong { color: #25473d; font: 700 27pt/1.4 'Noto Sans Arabic', sans-serif; }
+  #academicPrintDocument .academic-cover-stats span { font-size: 11pt; color: #506158; }
+  #academicPrintDocument .academic-cover-footer { display: flex; justify-content: space-between; gap: 4mm; margin-top: auto; padding-top: 10mm; color: #506158; font-size: 10pt; }
+  #academicPrintDocument .academic-module-contents { break-before: page; break-after: page; }
+  #academicPrintDocument .academic-module-contents .academic-contents-list li { padding-block: 3mm; }
+  #academicPrintDocument .academic-module-contents small { display: block; margin-top: 1mm; color: #59766a; font-size: 10pt; }
+  #academicPrintDocument .academic-section-label { font-size: 12pt; margin-block: 5mm 3mm; padding-bottom: 2mm; border-bottom: .5pt solid #d7e3dc; }
+  #academicPrintDocument .res-card-body { display: block !important; }
+  #academicPrintDocument .res-keypoints-list { display: block; list-style: none; padding: 0; margin-block: 3mm; counter-reset: resource-point; break-after: avoid-page; }
+  #academicPrintDocument .res-keypoints-list li { position: relative; counter-increment: resource-point; padding: 3mm 12mm 3mm 4mm; margin-block: 2.5mm; border: .5pt solid #d7e3dc; border-radius: 2mm; background: #fbfcfb !important; font-size: 11.5pt; line-height: 1.75; break-inside: avoid-page; }
+  #academicPrintDocument .res-keypoints-list li::before { content: counter(resource-point, decimal-leading-zero); position: absolute; inset-inline-start: 3mm; top: 4mm; font: 600 9pt/1.5 'Noto Sans Arabic', sans-serif; color: #59766a; }
+  #academicPrintDocument .res-keypoints-list li > strong:first-child { display: block; margin-bottom: 1mm; color: #25473d; }
+  #academicPrintDocument .academic-resource-dense .academic-title h1 { font-size: 20pt; line-height: 1.55; }
+  #academicPrintDocument .academic-resource-dense .academic-lead { padding: 3mm 4mm; font-size: 11.5pt; line-height: 1.7; }
+  #academicPrintDocument .academic-resource-dense .res-keypoints-list li { padding-block: 2mm; margin-block: 2mm; line-height: 1.65; }
+  #academicPrintDocument .matrix-table-wrap { overflow: visible; border: 0; border-radius: 0; margin-block: 3mm; }
+  #academicPrintDocument .matrix-table { font-size: 10.5pt; margin: 0; break-after: avoid-page; }
+  #academicPrintDocument .matrix-table th, #academicPrintDocument .matrix-table td { line-height: 1.4; padding: 1.5mm 2.3mm; border-color: #c9d9d0; overflow-wrap: anywhere; word-break: normal; }
+  #academicPrintDocument .matrix-table th { background: #254f43 !important; color: #fff !important; font: 600 9.5pt/1.8 'Noto Sans Arabic', Amiri, sans-serif; }
+  #academicPrintDocument .matrix-table tbody tr:nth-child(even) td { background: #f1f6f3 !important; }
+  #academicPrintDocument .matrix-table tbody td:first-child { font-weight: 700; color: #25473d; }
+  #academicPrintDocument .matrix-table[data-columns="3"] :is(th, td):last-child { width: 52%; }
+  #academicPrintDocument .cheat-grid { display: block; columns: 2; column-gap: 5mm; margin-top: 3mm; }
+  #academicPrintDocument .cheat-item-card { padding: 2.5mm 3.5mm; margin-block: 0 2.5mm; background: #fbfcfb !important; border: .5pt solid #d7e3dc; border-inline-start: 2pt solid #6e9985; border-radius: 2mm; break-inside: avoid; }
+  #academicPrintDocument .cheat-item-card strong { font-size: 11pt; line-height: 1.55; color: #25473d; }
+  #academicPrintDocument .cheat-item-card p { font-size: 11pt; color: #202823; line-height: 1.6; margin-bottom: 0; }
+  #academicPrintDocument .exam-tip-box { display: block; padding: 3.5mm 5mm; margin-top: 5mm; border: .5pt solid #e5d6b9; border-inline-start: 2.5pt solid #ac8644; border-radius: 2mm; background: #fbf6eb !important; color: #51432b !important; font-size: 11.5pt; line-height: 1.75; break-inside: avoid; }
+  #academicPrintDocument .academic-map-overview { break-after: page; }
+  #academicPrintDocument .academic-landscape .academic-header { margin-bottom: 3mm; }
+  #academicPrintDocument .academic-landscape .academic-masthead { line-height: 1.4; padding-bottom: 2mm; }
+  #academicPrintDocument .academic-landscape .academic-title { margin-top: 2mm; }
+  #academicPrintDocument .academic-landscape .academic-title h1 { font-size: 19pt; line-height: 1.45; margin-block: 1mm; }
+  #academicPrintDocument .academic-landscape .academic-eyebrow { font-size: 8pt; line-height: 1.5; }
+  #academicPrintDocument .academic-landscape .academic-title p { font-size: 10.5pt; line-height: 1.5; }
+  #academicPrintDocument .academic-landscape .academic-lead { padding: 2mm 4mm; margin-block: 2mm 3mm; font-size: 11pt; line-height: 1.6; }
+  #academicPrintDocument .academic-landscape .exam-tip-box { padding: 2.5mm 4mm; margin-top: 3mm; font-size: 10.5pt; line-height: 1.6; }
+  #academicPrintDocument .academic-map-intro { font-size: 11.5pt; margin-bottom: 2mm; }
+  #academicPrintDocument .academic-map-guide { display: flex; justify-content: space-between; gap: 4mm; padding-bottom: 3mm; color: #59766a; font: 600 8.5pt/1.7 'Noto Sans Arabic', sans-serif; }
+  #academicPrintDocument .academic-map-root { width: 92mm; margin: 1mm auto 4mm; padding: 3mm 5mm; line-height: 1.5; text-align: center; color: #fff; background: #254f43 !important; border: 1pt solid #254f43; border-radius: 3mm; position: relative; break-inside: avoid; }
+  #academicPrintDocument .academic-map-root::after { content: ''; position: absolute; width: 1pt; height: 4mm; top: 100%; left: 50%; background: #9ab7a8; }
+  #academicPrintDocument .academic-map-root strong { display: block; font: 700 14pt/1.65 'Noto Sans Arabic', sans-serif; }
+  #academicPrintDocument .academic-map-root span { display: block; font-size: 10.5pt; }
+  #academicPrintDocument .academic-map-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3mm; border-top: 1pt solid #9ab7a8; padding-top: 3mm; }
+  #academicPrintDocument [data-tone] { --branch-color: #527951; --branch-soft: #f0f5ed; }
+  #academicPrintDocument [data-tone="sand"] { --branch-color: #947238; --branch-soft: #faf5e9; }
+  #academicPrintDocument [data-tone="slate"] { --branch-color: #4d7487; --branch-soft: #edf3f6; }
+  #academicPrintDocument [data-tone="clay"] { --branch-color: #996a53; --branch-soft: #faf0eb; }
+  #academicPrintDocument [data-tone="violet"] { --branch-color: #7f6890; --branch-soft: #f4f0f8; }
+  #academicPrintDocument [data-tone="teal"] { --branch-color: #437c75; --branch-soft: #edf6f3; }
+  #academicPrintDocument .academic-map-node { display: block; border: .5pt solid #d2ddd6; border-inline-start: 2.5pt solid var(--branch-color); border-radius: 2mm; background: var(--branch-soft) !important; padding: 3mm 4mm; line-height: 1.5; break-inside: avoid; }
+  #academicPrintDocument .academic-map-node-meta { display: flex; justify-content: space-between; align-items: center; color: var(--branch-color); font: 600 8.5pt/1.5 'Noto Sans Arabic', sans-serif; }
+  #academicPrintDocument .academic-map-node-meta b { direction: ltr; font-size: 11pt; }
+  #academicPrintDocument .academic-map-node h2 { font-size: 12pt; line-height: 1.6; margin: 1mm 0; }
+  #academicPrintDocument .academic-map-node p { color: #344d42; font-size: 11pt; line-height: 1.5; margin: 0; }
+  #academicPrintDocument .academic-map-memory { padding: 3mm 5mm; margin-top: 4mm; border: .5pt solid #d7e3dc; border-radius: 2mm; background: #f1f6f3 !important; font-size: 11.5pt; break-inside: avoid; }
+  #academicPrintDocument .academic-map-dense .academic-map-root { padding-block: 2mm; margin-bottom: 3mm; }
+  #academicPrintDocument .academic-map-dense .academic-map-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2mm; padding-top: 2mm; }
+  #academicPrintDocument .academic-map-dense .academic-map-node { padding: 2mm 3mm; }
+  #academicPrintDocument .academic-map-dense .academic-map-node h2 { font-size: 11pt; }
+  #academicPrintDocument .academic-map-dense .academic-map-node p { font-size: 10.5pt; }
+  #academicPrintDocument .academic-map-dense .academic-map-memory { margin-top: 3mm; padding-block: 2mm; }
+  #academicPrintDocument .map-branch-reading { border: 0; border-radius: 0; background: #fff !important; padding: 0; }
+  #academicPrintDocument .map-branch-summary { font-size: 12pt; line-height: 1.8; max-width: none; margin-bottom: 3mm; padding: 3mm 4mm; border-inline-start: 2.5pt solid var(--branch-color); background: var(--branch-soft) !important; border-radius: 2mm; break-after: avoid-page; }
+  #academicPrintDocument .academic-map-branch .academic-masthead { display: none; }
+  #academicPrintDocument .academic-map-branch .academic-header { margin-bottom: 4mm; }
+  #academicPrintDocument .academic-map-branch .academic-title { margin-top: 0; padding-bottom: 3mm; border-bottom: 1pt solid var(--branch-color); }
+  #academicPrintDocument .academic-map-branch .academic-title h1 { font-size: 21pt; line-height: 1.5; margin-block: 1mm; }
+  #academicPrintDocument .academic-map-branch .academic-title-copy > p { display: inline-block; }
+  #academicPrintDocument .academic-map-branch .academic-section-number { color: var(--branch-color); border-color: var(--branch-color); }
+  #academicPrintDocument .academic-title .academic-branch-term { font: 400 9pt/1.5 'Noto Sans Arabic', 'Segoe UI', sans-serif; text-align: right; margin-inline-start: 4mm; color: #61766b; unicode-bidi: isolate; }
+  #academicPrintDocument .map-branch-sections { display: grid; grid-template-columns: 1.1fr 1fr; gap: 5mm; align-items: start; }
+  #academicPrintDocument .map-facts { display: block; }
+  #academicPrintDocument .map-branch-sections h4 { font-size: 9.5pt; margin-block: 0 2mm; }
+  #academicPrintDocument .map-fact { margin-block: 0 1.5mm; break-inside: avoid; }
+  #academicPrintDocument .map-fact dt { display: inline; font-size: 11.5pt; }
+  #academicPrintDocument .map-fact dt::after { content: ': '; }
+  #academicPrintDocument .map-fact dd { display: inline; margin: 0; color: #202823; font-size: 11.5pt; line-height: 1.65; }
+  #academicPrintDocument .map-example, #academicPrintDocument .map-confusion, #academicPrintDocument .map-recall-check { padding: 2.5mm 4mm; margin-top: 3mm; border: .5pt solid #d7e3dc; border-radius: 2mm; background: #fbfcfb !important; break-inside: avoid; }
+  #academicPrintDocument .map-example { margin-top: 0; break-inside: auto; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  #academicPrintDocument .map-example h4:not(:first-child) { margin-top: 3mm; }
+  #academicPrintDocument .academic-map-long .map-branch-sections { display: block; }
+  #academicPrintDocument .academic-map-long .map-fact { break-inside: auto; }
+  #academicPrintDocument .academic-map-long .map-example { margin-top: 4mm; }
+  #academicPrintDocument .map-example p, #academicPrintDocument .map-confusion p, #academicPrintDocument .map-recall-check p { font-size: 11.5pt; line-height: 1.65; color: #202823; margin-block: 1mm 0; }
+  #academicPrintDocument .map-confusion h4, #academicPrintDocument .map-recall-check h4 { font-size: 9.5pt; margin-block: 0 2mm; }
+  #academicPrintDocument .map-confusion { border-inline-start: 2pt solid #ac8644; background: #fcf8f0 !important; }
+  #academicPrintDocument .map-confusion, #academicPrintDocument .map-recall-check { margin-top: 2mm; padding-block: 2mm; }
+  #academicPrintDocument .map-branch-memory { padding: 2.5mm 4mm; margin-top: 3mm; border-inline-start: 2pt solid var(--branch-color); border-radius: 2mm; color: #202823; background: var(--branch-soft) !important; font-size: 11.5pt; line-height: 1.7; break-inside: avoid; break-after: avoid-page; }
+  #academicPrintDocument .map-branch-memory { padding-block: 2mm; margin-top: 2mm; }
+  #academicPrintDocument .academic-sources { page: academic-portrait; padding-top: 4mm; border-top: 1pt solid #25473d; margin-top: 6mm; break-inside: avoid-page; }
+  #academicPrintDocument .academic-sources h2 { font-size: 13pt; }
+  #academicPrintDocument .academic-sources li { margin-block: 2mm; break-inside: avoid; }
+  #academicPrintDocument .academic-sources a { text-decoration: underline; text-decoration-color: #9ab7a8; text-underline-offset: 2pt; }
+  #academicPrintDocument .academic-note { font-size: 10pt; color: #506158; }
+  #academicPrintDocument .module-body-text { max-width: none; font-size: 11.5pt; line-height: 1.75; }
+  #academicPrintDocument .lesson-section { margin-block: 6mm; }
+  #academicPrintDocument .module-workshop { margin-block: 6mm; padding: 4mm; border: .75pt solid #6e9985; background: #fff !important; color: #172d25; border-radius: 2mm; break-inside: auto; }
+  #academicPrintDocument .module-workshop :is(h3, h4, dt) { break-after: avoid-page; }
+  #academicPrintDocument .module-workshop li, #academicPrintDocument .workshop-pitfalls > div { break-inside: avoid-page; }
+  #academicPrintDocument .map-relations { padding: 2mm 4mm; margin-block: 2mm; background: #f1f6f3 !important; border-color: #6e9985; color: #172d25; border-radius: 2mm; break-inside: avoid-page; }
+  #academicPrintDocument .map-relations h4 { font-size: 9.5pt; margin-block: 0 1mm; }
+  #academicPrintDocument .map-relations ul { list-style: none; margin: 0; padding: 0; }
+  #academicPrintDocument .map-relations li { margin: 0; font-size: 11.5pt; line-height: 1.65; }
+  #academicPrintDocument .map-relations a { display: inline; }
+  #academicPrintDocument .map-relations p { display: inline; margin: 0; font-size: 11.5pt; line-height: 1.65; }
+  #academicPrintDocument .map-relations a::after { content: ': '; }
+  #academicPrintDocument .map-example .map-relations { margin: 2mm 0 0; padding: 2mm 0 0; border: 0; border-top: .5pt solid #bbc6bf; border-radius: 0; background: transparent !important; }
+  #academicPrintDocument .map-example .map-relations h4 { margin-top: 0; }
+  #academicPrintDocument .lesson-section > h3 { font-size: 12.5pt; padding-block: 2mm; border-bottom: .5pt solid #b9cfc6; }
+  #academicPrintDocument .academic-module .lesson-section { break-inside: auto; }
+  #academicPrintDocument .academic-module .lesson-section > h3 { break-after: avoid-page; }
+  #academicPrintDocument .academic-module .section-content :is(ul, ol) { break-inside: auto; }
+  #academicPrintDocument .academic-module .section-content li { break-inside: avoid-page; }
+  #academicPrintDocument .note-box, #academicPrintDocument .feature-box { padding: 4mm 5mm; margin-block: 4mm; border: .5pt solid #d7e3dc; border-inline-start: 2pt solid #6e9985; background: #f1f6f3 !important; border-radius: 2mm; font-size: 11.5pt; line-height: 1.7; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  #academicPrintDocument .feature-box h4 { font-size: 10.5pt; }
+  #academicPrintDocument .timeline-box { border-color: #b9cfc6; }
+  #academicPrintDocument .t-year { font: 600 9pt/1.5 'Noto Sans Arabic', sans-serif; background: #f1f6f3 !important; color: #25473d !important; break-after: avoid-page; }
+  #academicPrintDocument .t-item h4 { font-size: 11pt; }
+  #academicPrintDocument .accordion-body, #academicPrintDocument .section-content { overflow: visible !important; max-height: none !important; }
+}

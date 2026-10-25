@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-auth="loading">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="Tarbiyati · تربيتي">
+  <script src="../scripts/theme.js"></script>
+  <script src="../scripts/ui-actions.js" defer></script>
+  <title>مولد الجذاذات وبطاقات الدعم البيداغوجي | منصة تربيتي | Tarbiyati</title>
+  <link rel="preload" href="../assets/fonts/Cairo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/interface.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 30px;
+    }
+    @media (max-width: 950px) {
+      .generator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--gray-border);
+      background: var(--gray-bg);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+    .printable-sheet {
+      background: white;
+      color: #0f172a;
+      border: 2px solid #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 30px;
+      box-shadow: var(--shadow-md);
+      font-size: 0.95rem;
+    }
+    [data-theme="dark"] .printable-sheet {
+      background: #1e293b;
+      color: #f1f5f9;
+      border-color: #334155;
+    }
+    .sheet-header-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      border: 2px solid #0f172a;
+    }
+    [data-theme="dark"] .sheet-header-table {
+      border-color: #64748b;
+    }
+    .sheet-header-table td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+    .sheet-steps-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .sheet-steps-table th, .sheet-steps-table td {
+      border: 1px solid #cbd5e1;
+      padding: 10px;
+      text-align: right;
+      font-size: 0.88rem;
+    }
+    .sheet-steps-table th {
+      background: #f1f5f9;
+      font-weight: 800;
+    }
+    [data-theme="dark"] .sheet-steps-table th {
+      background: #0f172a;
+    }
+    @media print {
+      .navbar, .generator-form-col, footer, .section-head button, .nav-actions {
+        display: none !important;
+      }
+      .generator-grid {
+        display: block !important;
+      }
+      .printable-sheet {
+        box-shadow: none !important;
+        border: 1px solid black !important;
+        padding: 0 !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="../styles/fiche.css">
+  <link rel="stylesheet" href="../styles/academic-print.css">
+</head>
+<body class="print-fiche-only">
+
+  <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+  <aside class="site-sidebar" id="siteSidebar" aria-label="القائمة الرئيسية">
+    <button class="icon-button sidebar-close" type="button" data-click="closeMobileMenu" aria-label="إغلاق القائمة"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+    <a href="../index.html" class="site-brand"><span class="site-brand-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg></span><span><strong>تربيتي <span class="site-brand-latin" lang="en" dir="ltr">Tarbiyati</span></strong><small>لعلوم التربية والديداكتيك</small></span></a>
+    <nav aria-label="التنقل الرئيسي"><div class="nav-group"><span class="nav-group-label">تعلم واكتشف</span><ul class="site-nav"><li><a href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg><span>مساحة التعلم</span></a></li>
+<li><a href="modules.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg><span>المجزوءات</span></a></li>
+<li><a href="mindmaps.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4H5v4m7-4h7v4"/></svg><span>الخرائط الذهنية</span></a></li>
+</ul></div>
+<div class="nav-group"><span class="nav-group-label">تدرب وراجع</span><ul class="site-nav"><li><a href="quiz.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 5h3"/></svg><span>اختبر معرفتك</span></a></li>
+<li><a href="exams.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg><span>الامتحانات السابقة</span></a></li>
+<li><a href="simulator.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="m10 7 5 3-5 3zM8 21h8m-4-4v4"/></svg><span>المحاكي الصفي</span></a></li>
+<li><a href="flashcards.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="14" height="14" rx="2"/><path d="M17 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2m4-6h6m-6 4h4"/></svg><span>بطاقات المراجعة</span></a></li>
+</ul></div>
+<div class="nav-group"><span class="nav-group-label">مكتبتك التربوية</span><ul class="site-nav"><li><a href="resources.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h4V3zm7 0v18h4V3zm7 2 4-1 3 16-4 1z"/></svg><span>المراجع والمصادر</span></a></li>
+<li><a href="glossary.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8m-8 4h5m-5 4h8"/></svg><span>المعجم التربوي</span></a></li>
+<li><a href="fiche-generator.html" class="active" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h10l6 6v12H4zM14 3v6h6M8 13h8m-8 4h5"/></svg><span>تخطيط الجذاذات</span></a></li>
+</ul></div>
+</nav>
+    <div class="sidebar-bottom"><span>مساحة للفهم، والتعلم، والممارسة.</span></div>
+  </aside>
+  <div class="sidebar-overlay" data-click="closeMobileMenu" aria-hidden="true"></div>
+  <header class="site-topbar">
+    <button class="icon-button menu-trigger" type="button" data-click="toggleMobileMenu" aria-label="فتح القائمة الرئيسية" aria-expanded="false" aria-controls="siteSidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="page-location"><a href="../index.html">تربيتي</a><span aria-hidden="true">/</span><strong>تخطيط الجذاذات</strong></div>
+    <div class="topbar-actions">
+      <button class="global-search-trigger" type="button" data-click="openQuickSearch" aria-label="البحث في المنصة"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>ابحث عن مفهوم أو درس...</span><kbd dir="ltr">Ctrl K</kbd></button>
+      <button id="themeToggleBtn" class="icon-button" type="button" data-click="toggleTheme" aria-label="تفعيل الوضع الليلي"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/></svg></button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main-wrapper" id="main-content" tabindex="-1">
+  <div id="ficheWorkspace" lang="ar" dir="rtl">
+    <div class="section-head">
+      <div>
+        <h1 data-fiche-text="heading">خطط لتعلم أفضل</h1>
+        <p data-fiche-text="introduction">أنشئ جذاذة لأي مستوى، بالعربية أو بالفرنسية.</p>
+      </div>
+    </div>
+
+    <section class="fiche-settings" aria-labelledby="ficheSettingsHeading">
+      <h2 id="ficheSettingsHeading" data-fiche-text="settings">المستوى ولغة الجذاذة</h2>
+      <div class="fiche-settings-grid">
+        <div class="form-group"><label for="inLanguage" data-fiche-label="language">لغة الجذاذة</label><select id="inLanguage" class="form-control"><option value="ar">العربية</option><option value="fr">Français</option></select></div>
+        <div class="form-group"><label for="inCycle" data-fiche-label="cycle">السلك التعليمي</label><select id="inCycle" class="form-control"></select></div>
+        <div class="form-group"><label for="inLevel" data-fiche-label="level">المستوى الدراسي</label><select id="inLevel" class="form-control"></select></div>
+        <div class="form-group" id="ficheTrackField" hidden><label for="inTrack" data-fiche-label="track">الشعبة / المسلك</label><select id="inTrack" class="form-control"><option value="all">ALL</option></select></div>
+        <div class="form-group"><label for="inSchool" data-fiche-label="school">المؤسسة</label><input id="inSchool" class="form-control" type="text" maxlength="200"></div>
+        <div class="form-group"><label for="inTeacher" data-fiche-label="teacher">الأستاذ(ة)</label><input id="inTeacher" class="form-control" type="text" maxlength="200"></div>
+        <div class="form-group"><label for="inSessionDate" data-fiche-label="sessionDate">تاريخ الحصة</label><input id="inSessionDate" class="form-control" type="date"></div>
+        <div class="form-group"><label for="inDuration" data-fiche-label="duration">مدة الحصة</label><input id="inDuration" class="form-control" type="text" maxlength="120"></div>
+      </div>
+    </section>
+    <!-- PRESET TEMPLATES -->
+    <section class="fiche-presets" aria-labelledby="fichePresetsHeading">
+      <h2 id="fichePresetsHeading" data-fiche-text="presets">نماذج قابلة للتعديل</h2>
+      <p class="academic-print-hint" data-fiche-text="presetHint">اختر المستوى وكيّف الأنشطة بما يناسب متعلميك.</p>
+      <div id="ficheSubjectPresets" class="fiche-subject-grid"></div>
+    </section>
+    <div class="draft-toolbar fiche-drafts"><label for="draftSelect"><span data-fiche-text="drafts">جذاذاتي المحفوظة</span><select id="draftSelect"><option value="">جذاذة جديدة</option></select></label><button type="button" id="newDraftBtn" class="btn btn-outline btn-sm" data-fiche-text="newDraft">جذاذة جديدة</button></div>
+    <div id="ficheStudentRecovery" class="fiche-recovery-notice" hidden>
+      <p data-fiche-text="studentRecovery">بعض أنشطة المتعلمين فارغة. أكمل المراحل أو استعد الأنشطة من النموذج.</p>
+      <button id="restoreFicheStudents" type="button" class="btn btn-outline" data-fiche-text="restoreStudents">استكمال أنشطة المتعلمين من النموذج</button>
+    </div>
+    <!-- GENERATOR GRID -->
+    <div class="generator-grid">
+      <!-- FORM COLUMN -->
+      <div class="card generator-form-col">
+        <h3 data-fiche-text="formHeading" style="color: var(--primary); margin-bottom: 18px;">⚙️ معطيات التخطيط البيداغوجي</h3>
+
+        <div class="form-group">
+          <label for="inSubject" data-fiche-label="subject">المادة الدراسية والسلك:</label>
+          <input type="text" id="inSubject" class="form-control" value="النشاط العلمي - السلك الابتدائي" data-input="updateSheet">
+        </div>
+
+        <div class="form-group">
+          <label for="inTitle" data-fiche-label="title">عنوان الدرس / الوحدة الديداكتيكية:</label>
+          <input type="text" id="inTitle" class="form-control" value="تنفس الكائنات الحية والتبادلات الغازية" data-input="updateSheet">
+        </div>
+
+        <div class="form-group">
+          <label for="inCompetence" data-fiche-label="competence">الكفاية المستهدفة (Compétence):</label>
+          <textarea id="inCompetence" class="form-control" rows="2" data-input="updateSheet">يكون المتعلم قادراً على حل وضعيات مشكلة دالة بتعبئة موارده المتعلقة بخصائص الكائنات الحية ووظائفها الحيوية.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="inObjectives" data-fiche-label="objectives">الأهداف التعلمية الإجرائية:</label>
+          <textarea id="inObjectives" class="form-control" rows="2" data-input="updateSheet">1. يحدد الأعضاء المسؤولة عن التنفس في أوساط مختلفة.
+2. يقارن بين الحركات التنفسية للأسماك والثدييات عبر الملاحظة والتجريب.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="inPedagogy" data-fiche-label="pedagogy">المقاربة البيداغوجية المعتمدة:</label>
+          <select id="inPedagogy" class="form-control" data-change="updateSheet">
+            <option value="نهج التقصي وبيداغوجيا حل المشكلات">نهج التقصي وبيداغوجيا حل المشكلات</option>
+            <option value="البيداغوجيا الفارقية (مجموعات المهام)">البيداغوجيا الفارقية (مجموعات المهام)</option>
+            <option value="بيداغوجيا المشروع التشاركي">بيداغوجيا المشروع التشاركي</option>
+            <option value="بيداغوجيا الخطأ والصراع المعرفي">بيداغوجيا الخطأ والصراع المعرفي</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inCriteria" data-fiche-label="criteria">معايير ومؤشرات التقويم التكويني:</label>
+          <input type="text" id="inCriteria" class="form-control" value="معيار الملاءمة: التفسير السليم لوظيفة الغلاصم | معيار الانسجام: التعبير العلمي الدقيق" data-input="updateSheet">
+        </div>
+
+        <div class="form-group">
+          <label for="inSupport" data-fiche-label="support">صيغة الدعم والمعالجة المبرمجة:</label>
+          <select id="inSupport" class="form-control" data-change="updateSheet">
+            <option value="دعم مندمج فوري عبر التغذية الراجعة وتعديل التمثلات الخاطئة">دعم مندمج فوري (Soutien intégré)</option>
+            <option value="دعم دوري (أسبوع الدعم والتثبيت Arrêt-bilan)">دعم دوري (Soutien périodique)</option>
+            <option value="دعم مؤسساتي وفق مقاربة التدريس بالمسار المناسب TaRL">دعم مؤسساتي (Soutien institutionnel)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PREVIEW SHEET COLUMN -->
+      <div class="printable-sheet fiche-sheet" id="sheetPreview">
+        <div class="fiche-page-header">
+        <header class="sheet-document-header">
+          <img id="ficheMinistryLogo" class="sheet-ministry-logo" src="../assets/branding/education-ministry-ar-amazigh.svg" width="450" height="88" alt="شعار وزارة التربية الوطنية والتعليم الأولي والرياضة بالعربية والأمازيغية">
+          <div class="sheet-document-title">
+            <h2 data-fiche-text="documentKind">بطاقة التخطيط البيداغوجي</h2>
+            <p id="outLessonTitle" class="sheet-lesson-title"></p>
+          </div>
+        </header>
+        <div class="sheet-context-grid" id="ficheMetadataPreview">
+          <div><strong data-fiche-label="school">المؤسسة:</strong> <span id="outSchool"></span></div>
+          <div><strong data-fiche-label="teacher">الأستاذ(ة):</strong> <span id="outTeacher"></span></div>
+          <div><strong data-fiche-label="level">المستوى:</strong> <span id="outLevel"></span></div>
+          <div><strong data-fiche-label="sessionDate">تاريخ الحصة:</strong> <span id="outSessionDate"></span></div>
+          <div><strong data-fiche-label="duration">المدة:</strong> <span id="outDuration"></span></div>
+        </div>
+        </div>
+
+        <table class="sheet-header-table">
+          <tr>
+            <td><strong data-fiche-label="subject">المادة الدراسية:</strong> <span id="outSubject">النشاط العلمي</span></td>
+            <td><strong data-fiche-label="title">عنوان الدرس / الوحدة:</strong> <span id="outTitle">تنفس الكائنات الحية</span></td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong data-fiche-label="competence">الكفاية المستهدفة:</strong> <span id="outCompetence">نص الكفاية</span></td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong data-fiche-label="objectives">الأهداف التعلمية:</strong> <span id="outObjectives">الأهداف</span></td>
+          </tr>
+          <tr>
+            <td><strong data-fiche-label="pedagogy">المقاربة البيداغوجية:</strong> <span id="outPedagogy">نهج التقصي</span></td>
+            <td><strong data-fiche-label="materials">الوسائل الديداكتيكية:</strong> <span id="outMaterials">حوض سمك، صور، أشرطة وثائقية، مجسمات</span></td>
+          </tr>
+          <tr><td colspan="2"><strong data-fiche-label="criteria">معايير ومؤشرات التقويم:</strong> <span id="outCriteria"></span></td></tr>
+        </table>
+
+        <h4 id="ficheScenarioHeading" class="sheet-scenario-heading" data-fiche-text="scenario">سيناريو المقطع التعليمي التعلمي:</h4>
+        <div class="sheet-steps-wrap" tabindex="0" role="region" aria-labelledby="ficheScenarioHeading">
+        <table class="sheet-steps-table">
+          <thead>
+            <tr>
+              <th scope="col" data-fiche-text="phase">المرحلة الديداكتيكية</th>
+              <th scope="col" data-fiche-text="phaseDuration">المدة (دقيقة)</th>
+              <th scope="col" data-fiche-text="teacherActivities">أنشطة الأستاذ(ة)</th>
+              <th scope="col" data-fiche-text="studentActivities">أنشطة المتعلمين</th>
+              <th scope="col" data-fiche-text="assessment">التقويم والدعم البيداغوجي</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. وضعية الانطلاق والتحسيس</strong></td>
+              <td></td><td></td>
+              <td>طرح وضعية دالة (ملاحظة سمكة تفتح فمها وغلاصمها باستمرار تحت الماء). رصد تمثلات التلاميذ وتدوين فرضياتهم على السبورة.</td>
+              <td>تقويم تشخيصي للتمثلات السابقة؛ رصد الصراع المعرفي دون تصحيح متسرع (تجنب أثر طوباز).</td>
+            </tr>
+            <tr>
+              <td><strong>2. مرحلة التقصي وبناء المفهوم</strong></td>
+              <td></td><td></td>
+              <td>عمل بالمجموعات: فحص وثائق تجريبية ومقارنة تنفس السمكة بتنفس الإنسان. مناقشة وتوليف الخلاصات.</td>
+              <td>تقويم تكويني مواكب؛ دعم مندمج للأقران المتعثرين عبر السند البيداغوجي (L'étayage).</td>
+            </tr>
+            <tr>
+              <td><strong>3. الاستنتاج والمأسسة</strong></td>
+              <td></td><td></td>
+              <td>صياغة خلاصة جماعية مشتركة تؤسس للمفهوم العلمي وتثبت المفردات الأساسية (غلاصم، رئتان، تبادلات).</td>
+              <td>مأسسة رصينة مبنية على نتائج التقصي (تفادي المأسسة المبكرة).</td>
+            </tr>
+            <tr>
+              <td><strong>4. الاستثمار والتقويم النهائي</strong></td>
+              <td></td><td></td>
+              <td>حل وضعية جديدة: «كيف يتنفس الضفدع في البر والماء؟». تطبيق المعارف في سياق مغاير.</td>
+              <td><span id="outSupportText">دعم مندمج فوري</span> ومطابقة مؤشرات التحقق.</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="sheet-footer">
+        <p id="fichePhaseTotal" class="fiche-phase-total" aria-live="polite"></p>
+
+        <div class="sheet-signatures">
+          <span><span data-fiche-text="teacherSignature">توقيع الأستاذ(ة)</span></span>
+          <span><span data-fiche-text="inspectorSignature">تأشيرة المفتش التربوي</span></span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="fiche-actions">
+      <div class="fiche-actions-buttons">
+        <button type="button" id="saveDraftBtn" class="btn btn-primary" data-fiche-text="save">حفظ الآن</button>
+        <button type="button" id="deleteDraftBtn" class="btn btn-outline" hidden data-fiche-text="delete">حذف الجذاذة</button>
+        <button type="button" class="btn btn-primary" data-click="printAcademicDocument" data-fiche-text="print">🖨️ PDF / طباعة الجذاذة</button>
+      </div>
+      <div id="draftStatus" class="draft-status" role="status" aria-live="polite"></div>
+      <div id="draftConflictActions" hidden><button type="button" id="reloadDraftBtn" class="btn btn-outline btn-sm" data-fiche-text="reload">افتح النسخة المحفوظة</button><button type="button" id="copyDraftBtn" class="btn btn-outline btn-sm" data-fiche-text="copy">احفظ تعديلاتي كنسخة جديدة</button></div>
+      <p class="academic-print-hint" data-fiche-text="printHint">تنسيق أكاديمي بحجم A4. للحفظ اختر «Save as PDF / حفظ بصيغة PDF» من نافذة الطباعة.</p>
+    </div>
+  </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer"><span>تربيتي · علوم التربية والديداكتيك</span><a href="resources.html">اكتشف المراجع والمصادر <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a></footer>
+
+  <script src="../scripts/accounts.js"></script>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/data/ficheData.js"></script>
+  <script src="../scripts/data/fiche-tracks.js"></script>
+  <script src="../scripts/data/fiche-subjects.js"></script>
+  <script src="../scripts/fiche-language.js"></script>
+  <script src="../scripts/page-fiche-generator.js"></script>
+  <script src="../scripts/academic-print.js"></script>
+</body>
+</html>
+

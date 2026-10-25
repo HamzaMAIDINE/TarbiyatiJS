@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-auth="loading">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="Tarbiyati · تربيتي">
+  <script src="../scripts/theme.js"></script>
+  <script src="../scripts/ui-actions.js" defer></script>
+  <title>الخزانة التربوية والمراجع الرسمية | تربيتي في علوم التربية | Tarbiyati</title>
+  <link rel="preload" href="../assets/fonts/Cairo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/interface.css">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .resource-filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+      padding: 16px;
+      background: var(--gray-card);
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      align-items: center;
+      justify-content: space-between;
+    }
+    .res-card {
+      background: var(--gray-card);
+      border: 1.5px solid var(--gray-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+    .res-card:hover {
+      border-color: var(--primary-accent);
+      box-shadow: var(--shadow-md);
+    }
+    .res-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .res-badge {
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 800;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+    [data-theme="dark"] .res-badge {
+      color: var(--primary-accent);
+    }
+    .res-keypoints-list {
+      list-style: none;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .res-keypoints-list li {
+      background: var(--gray-bg);
+      border-right: 3.5px solid var(--primary-accent);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .exam-tip-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-right: 4px solid var(--secondary);
+      color: #92400e;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      margin-top: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    [data-theme="dark"] .exam-tip-box {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.25);
+      color: #fde68a;
+    }
+    .matrix-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--gray-border);
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      font-size: 0.88rem;
+    }
+    .matrix-table th {
+      background: var(--gray-bg);
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--gray-border);
+      font-weight: 800;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .matrix-table th {
+      color: var(--primary-accent);
+    }
+    .matrix-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--gray-border);
+      line-height: 1.6;
+    }
+    .matrix-table tr:hover td {
+      background: rgba(16, 185, 129, 0.04);
+    }
+    .cheat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .cheat-item-card {
+      background: var(--gray-bg);
+      border: 1px solid var(--gray-border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      border-right: 3px solid var(--secondary);
+    }
+    .cheat-item-card strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+    .cheat-item-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+  <link rel="stylesheet" href="../styles/academic-print.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+  <aside class="site-sidebar" id="siteSidebar" aria-label="القائمة الرئيسية">
+    <button class="icon-button sidebar-close" type="button" data-click="closeMobileMenu" aria-label="إغلاق القائمة"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+    <a href="../index.html" class="site-brand"><span class="site-brand-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg></span><span><strong>تربيتي <span class="site-brand-latin" lang="en" dir="ltr">Tarbiyati</span></strong><small>لعلوم التربية والديداكتيك</small></span></a>
+    <nav aria-label="التنقل الرئيسي"><div class="nav-group"><span class="nav-group-label">تعلم واكتشف</span><ul class="site-nav"><li><a href="dashboard.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/></svg><span>مساحة التعلم</span></a></li>
+<li><a href="modules.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg><span>المجزوءات</span></a></li>
+<li><a href="mindmaps.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4H5v4m7-4h7v4"/></svg><span>الخرائط الذهنية</span></a></li>
+</ul></div>
+<div class="nav-group"><span class="nav-group-label">تدرب وراجع</span><ul class="site-nav"><li><a href="quiz.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 2h6v4H9zM9 11h6m-6 5h3"/></svg><span>اختبر معرفتك</span></a></li>
+<li><a href="exams.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg><span>الامتحانات السابقة</span></a></li>
+<li><a href="simulator.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="m10 7 5 3-5 3zM8 21h8m-4-4v4"/></svg><span>المحاكي الصفي</span></a></li>
+<li><a href="flashcards.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="14" height="14" rx="2"/><path d="M17 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2m4-6h6m-6 4h4"/></svg><span>بطاقات المراجعة</span></a></li>
+</ul></div>
+<div class="nav-group"><span class="nav-group-label">مكتبتك التربوية</span><ul class="site-nav"><li><a href="resources.html" class="active" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h4V3zm7 0v18h4V3zm7 2 4-1 3 16-4 1z"/></svg><span>المراجع والمصادر</span></a></li>
+<li><a href="glossary.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8m-8 4h5m-5 4h8"/></svg><span>المعجم التربوي</span></a></li>
+<li><a href="fiche-generator.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h10l6 6v12H4zM14 3v6h6M8 13h8m-8 4h5"/></svg><span>تخطيط الجذاذات</span></a></li>
+</ul></div>
+</nav>
+    <div class="sidebar-bottom"><span>مساحة للفهم، والتعلم، والممارسة.</span></div>
+  </aside>
+  <div class="sidebar-overlay" data-click="closeMobileMenu" aria-hidden="true"></div>
+  <header class="site-topbar">
+    <button class="icon-button menu-trigger" type="button" data-click="toggleMobileMenu" aria-label="فتح القائمة الرئيسية" aria-expanded="false" aria-controls="siteSidebar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <div class="page-location"><a href="../index.html">تربيتي</a><span aria-hidden="true">/</span><strong>المراجع والمصادر</strong></div>
+    <div class="topbar-actions">
+      <button class="global-search-trigger" type="button" data-click="openQuickSearch" aria-label="البحث في المنصة"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>ابحث عن مفهوم أو درس...</span><kbd dir="ltr">Ctrl K</kbd></button>
+      <button id="themeToggleBtn" class="icon-button" type="button" data-click="toggleTheme" aria-label="تفعيل الوضع الليلي"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/></svg></button>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="main-wrapper" id="main-content" tabindex="-1">
+    <div class="section-head" style="margin-top: 15px;">
+      <div>
+        <h1>مكتبتك التربوية</h1>
+        <p>مراجع ووثائق ومقارنات تساعدك على تعميق فهمك والاستعداد للممارسة المهنية.</p>
+      </div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button class="btn btn-outline btn-sm" data-click="expandAllResCards">📖 فتح كافة البطاقات</button>
+        <button class="btn btn-outline btn-sm" data-click="collapseAllResCards">📁 طي البطاقات</button>
+        <button class="btn btn-primary btn-sm" data-click="printAcademicDocument">🖨️ PDF / طباعة المراجع</button>
+      </div>
+    </div>
+
+    <p class="academic-print-hint">ملف أكاديمي للمراجع المعروضة، مع تفاصيلها كاملة. للحفظ اختر «Save as PDF / حفظ بصيغة PDF» من نافذة الطباعة.</p>
+    <!-- FILTER BAR & SEARCH -->
+    <div class="resource-filter-bar">
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="categoryFilterContainer">
+        <!-- Rendered by JS -->
+      </div>
+      <div style="min-width: 260px;">
+        <input type="text" id="resSearchInput" aria-label="البحث في المراجع" placeholder="🔍 بحث في المراجع والنصوص والمفاهيم..." 
+               style="width: 100%; padding: 8px 16px; border-radius: 20px; border: 1.5px solid var(--gray-border); font-family: inherit; font-size: 0.9rem; background: var(--gray-bg); color: var(--text-main);"
+               data-input="filterResources">
+      </div>
+    </div>
+
+    <!-- CARDS CONTAINER -->
+    <div id="resourcesListContainer">
+      <!-- Injected dynamically by JS -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer"><span>تربيتي · علوم التربية والديداكتيك</span><a href="resources.html">اكتشف المراجع والمصادر <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a></footer>
+
+  <script src="../scripts/data/resourcesData.js"></script>
+  <script src="../scripts/accounts.js"></script>
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/page-resources.js"></script>
+  <script src="../scripts/academic-print.js"></script>
+</body>
+</html>
+

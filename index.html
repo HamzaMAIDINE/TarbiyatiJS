@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="Tarbiyati · تربيتي">
+  <script src="scripts/theme.js"></script>
+  <script src="scripts/ui-actions.js" defer></script>
+  <meta name="theme-color" content="#203a32">
+  <meta name="description" content="اكتشف تربيتي: مجزوءات علوم التربية والديداكتيك، خرائط ذهنية، وبطاقات مراجعة ووضعيات صفية. أنشئ حسابك لتتابع تقدمك في التعلم.">
+  <title>تربيتي | فهم أعمق لعلوم التربية | Tarbiyati</title>
+  <!-- SEO_METADATA -->
+  <link rel="preload" href="/assets/fonts/Cairo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/interface.css">
+  <link rel="stylesheet" href="styles/landing.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="landing-page">
+  <a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+  <header class="landing-header">
+    <div class="landing-container landing-nav">
+      <a href="index.html" class="site-brand landing-brand" aria-label="تربيتي Tarbiyati، الصفحة الرئيسية"><span class="site-brand-mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg></span><span><strong>تربيتي <span class="site-brand-latin" lang="en" dir="ltr">Tarbiyati</span></strong><small>لعلوم التربية والديداكتيك</small></span></a>
+      <nav aria-label="اكتشف المنصة"><a href="/learn/">علوم التربية</a><a href="/mindmaps/">الخرائط الذهنية</a><a href="#how-it-works">كيف تبدأ؟</a></nav>
+      <div class="landing-nav-actions">
+        <a href="pages/account.html" class="btn btn-outline" data-account-link>تسجيل الدخول</a>
+        <button id="themeToggleBtn" class="icon-button" type="button" data-click="toggleTheme" aria-label="تفعيل الوضع الليلي" title="تفعيل الوضع الليلي" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" class="landing-container" tabindex="-1">
+    <section class="learning-hero landing-hero" aria-labelledby="landing-heading">
+      <div class="learning-hero-copy">
+        <span class="hero-eyebrow">مساحتك لفهم علوم التربية</span>
+        <h1 id="landing-heading">فهم أعمق لعلوم التربية.<br><span>تعليم أفضل.</span></h1>
+        <p>ابدأ من الأسس النظرية، واربط المفاهيم بالممارسة الصفية. مجزوءات منظمة وأدوات تفاعلية تساعدك على التعلم بثقة وفي وتيرتك الخاصة.</p>
+        <div class="hero-actions"><a href="pages/account.html?mode=register" class="btn btn-primary" data-start-link>ابدأ رحلتك <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a><a href="#curriculum" class="text-link">اكتشف ما ستتعلم <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a></div>
+        <p class="landing-hero-note">حساب واحد يحفظ تقدمك، لتتابع من حيث توقفت.</p>
+      </div>
+      <div class="learning-illustration" aria-hidden="true">
+        <svg class="book-illustration" viewBox="0 0 320 270" fill="none" aria-hidden="true">
+          <ellipse cx="161" cy="222" rx="105" ry="13" fill="#355542" opacity=".08"/>
+          <path d="m56 192 98-30 112 24v20l-98 34-112-28Z" fill="#748c63"/>
+          <path d="m56 192 112 28 98-34-113-25Z" fill="#a4b990"/>
+          <path d="m168 220 98-34v20l-98 34Z" fill="#cfdaba"/>
+          <path d="m68 166 90-29 100 25v18l-89 32-101-28Z" fill="#e0d4b2"/>
+          <path d="m68 166 101 29 89-33-99-25Z" fill="#f3e9ce"/>
+          <path d="m169 195 89-33v18l-89 32Z" fill="#faf4e6"/>
+          <path d="m62 132 88-30 114 30v21l-92 32-110-31Z" fill="#244c42"/>
+          <path d="m172 164 92-32v21l-92 32Z" fill="#d5dfc5"/>
+          <path d="m62 132 109 31 93-31-114-30Z" fill="#38634f"/>
+          <path d="m72 115 87-29 1-57c-32-14-59-8-87 2Z" fill="#dde8c7"/>
+          <path d="m160 29 1 57 86 25 1-82c-29-9-55-12-88 0Z" fill="#e7eed9"/>
+          <path d="M73 31c30-9 55-11 87 2v100c-32-15-59-13-87-3Z" fill="#fdfbf2" stroke="#c6d2b4" stroke-width="1.5"/>
+          <path d="M160 33c31-11 58-10 88-1v99c-30-9-57-10-88 2Z" fill="#f5f6e8" stroke="#c6d2b4" stroke-width="1.5"/>
+          <path d="M160 35v94" stroke="#b9c9a5" stroke-width="2"/>
+          <path d="M90 51c18-4 32-4 51 3M90 64c18-4 32-4 51 3M90 77c18-4 32-4 51 3M90 90c18-4 32-4 39 1M179 53c16-4 33-3 51 1M179 66c16-4 33-3 51 1M179 79c16-4 33-3 51 1M179 92c16-4 25-3 35-1" stroke="#a6b597" stroke-width="2" stroke-linecap="round"/>
+          <path d="m190 32 12-2v35l-6-5-6 6Z" fill="#c1a26b"/>
+          <path d="M268 64v12m-6-6h12M47 91v8m-4-4h8" stroke="#789365" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="265" cy="171" r="4" fill="#d1bb84"/><circle cx="54" cy="56" r="3" fill="#91a97b"/>
+        </svg>
+        <span class="concept-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg> البيداغوجيا</span><span class="concept-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4H5v4m7-4h7v4"/></svg> علم النفس التربوي</span><span class="concept-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="m10 7 5 3-5 3zM8 21h8m-4-4v4"/></svg> الديداكتيك</span>
+      </div>
+    </section>
+    <section class="landing-section" id="tools" aria-labelledby="tools-heading">
+      <div class="landing-section-heading"><span class="eyebrow">تعلم، راجع، ثم طبق</span><h2 id="tools-heading">من الفكرة إلى الممارسة</h2><p>طرق متنوعة تساعدك على فهم المفاهيم وتثبيتها واستخدامها في القسم.</p></div>
+      <div class="landing-feature-grid">
+        <article class="landing-feature"><span class="review-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/></svg></span><h3>ابنِ أساساً معرفياً</h3><p>تعلم علوم التربية والديداكتيك في مجزوءات منظمة، من نظريات النمو والتعلم إلى التقويم والتدبير الصفي.</p></article>
+        <article class="landing-feature"><span class="review-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="7" width="14" height="14" rx="2"/><path d="M17 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2m4-6h6m-6 4h4"/></svg></span><h3>راجع بطريقتك</h3><p>اربط الأفكار بخرائط ذهنية، وثبت المفاهيم ببطاقات مراجعة، واختبر فهمك بأسئلة مع شرح للإجابات.</p></article>
+        <article class="landing-feature"><span class="review-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="m10 7 5 3-5 3zM8 21h8m-4-4v4"/></svg></span><h3>طور ممارستك</h3><p>استكشف وضعيات صفية، وافهم أثر قراراتك التربوية، واستعن بأداة تخطيط الجذاذات لتنظيم التعلمات.</p></article>
+      </div>
+    </section>
+    <section class="landing-section landing-curriculum" id="curriculum" aria-labelledby="curriculum-heading">
+      <div class="landing-section-heading"><span class="eyebrow">مسار واضح، خطوة بخطوة</span><h2 id="curriculum-heading">ماذا ستتعلم؟</h2><p>ثماني مجزوءات تغطي الأسس النظرية والممارسات المهنية في علوم التربية.</p></div>
+      <ol class="landing-module-grid">
+        <li><span aria-hidden="true">01</span><h3>النظام التربوي المغربي</h3></li>
+        <li><span aria-hidden="true">02</span><h3>علم النفس التربوي ونظريات النمو</h3></li>
+        <li><span aria-hidden="true">03</span><h3>نظريات التعلم</h3></li>
+        <li><span aria-hidden="true">04</span><h3>البيداغوجيات وصنافات الأهداف</h3></li>
+        <li><span aria-hidden="true">05</span><h3>الديداكتيك والظواهر الصفية</h3></li>
+        <li><span aria-hidden="true">06</span><h3>تخطيط التعلمات والتواصل الصفي</h3></li>
+        <li><span aria-hidden="true">07</span><h3>التقويم والدعم التربوي</h3></li>
+        <li><span aria-hidden="true">08</span><h3>التشريع والحياة المدرسية</h3></li>
+      </ol>
+    </section>
+    <section class="landing-section learning-path-section" id="how-it-works" aria-labelledby="steps-heading">
+      <div class="landing-section-heading"><span class="eyebrow">رحلتك تبدأ بخطوة</span><h2 id="steps-heading">مسار التعلم الخاص بك</h2></div>
+      <ol class="landing-steps" role="list">
+        <li>
+          <div class="step-card-top"><span class="step-number" aria-hidden="true">01</span><span class="step-symbol"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="7" r="4"/><path d="M3 21v-2a7 7 0 0 1 10-6M19 11v8m-4-4h8"/></svg></span></div>
+          <div class="step-card-copy"><h3>أنشئ حسابك</h3><p>مساحة شخصية تحفظ نشاطك وتقدمك.</p></div>
+        </li>
+        <li>
+          <div class="step-card-top"><span class="step-number" aria-hidden="true">02</span><span class="step-symbol"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v16M12 5C9 3 5 3 2 4v15c3-1 7-1 10 2 3-3 7-3 10-2V4c-3-1-7-1-10 1Z"/><path d="M5 8h3m8 0h3M5 12h3m8 0h3"/></svg></span></div>
+          <div class="step-card-copy"><h3>تعلم وطبق</h3><p>اختر مجزوءة، راجع مفاهيمها، واختبر فهمك.</p></div>
+        </li>
+        <li>
+          <div class="step-card-top"><span class="step-number" aria-hidden="true">03</span><span class="step-symbol"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 15l5-5 4 3 5-7m-5 0h5v5"/></svg></span></div>
+          <div class="step-card-copy"><h3>تابع تقدمك</h3><p>عد إلى دروسك ونتائجك من أي جهاز.</p></div>
+        </li>
+      </ol>
+    </section>
+    <section class="landing-cta" aria-labelledby="cta-heading"><div><h2 id="cta-heading">خطوتك التالية نحو تعليم أفضل</h2><p>ابدأ التعلم اليوم، ودع كل نشاط يبني على ما قبله.</p></div><a href="pages/account.html?mode=register" class="btn" data-start-link>أنشئ حسابك وابدأ <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12H4m6-6-6 6 6 6"/></svg></a></section>
+  </main>
+  <footer class="landing-footer"><div class="landing-container"><span>تربيتي · علوم التربية والديداكتيك</span><a href="pages/account.html" data-account-link>تسجيل الدخول</a></div></footer>
+  <script src="scripts/landing.js" defer></script>
+</body>
+</html>
