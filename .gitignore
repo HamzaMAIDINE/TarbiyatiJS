@@ -1,12 +1,28 @@
-.data/
-node_modules/
+# Environment & secrets
 .env
 .env.*
 !.env.example
-*.log
+
+# Dependencies & runtime data
+node_modules/
+.data/
 *.sqlite
 *.sqlite-*
+*.log
 *.tgz
+
+# Heavy binaries & research files
+cloudflared.exe
+*.exe
+PDFs/
+
+# Build & scratch outputs
 output/
 scratch/
 __pycache__/
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

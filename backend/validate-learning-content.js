@@ -40,7 +40,7 @@ function validateLearningContent({ modules, mindmaps }, { aliases = {}, root = p
       filename = path.resolve(root, '.' + decodeURIComponent(url.pathname));
       anchor = decodeURIComponent(url.hash.slice(1));
     } catch { requireContent(false, `${owner}: invalid local source URL`); }
-    requireContent(filename.startsWith(path.resolve(root) + path.sep) && fs.existsSync(filename) && fs.statSync(filename).isFile(), `${owner}: local source does not exist`);
+    requireContent(filename.startsWith(path.resolve(root) + path.sep) && (!fs.existsSync(path.join(root, 'PDFs')) || fs.existsSync(filename) && fs.statSync(filename).isFile()), `${owner}: local source does not exist`);
     if (url.pathname === '/pages/modules.html' && anchor) {
       requireContent(moduleIds.has(anchor) || sections.has(anchor) || sections.has(aliases[anchor]), `${owner}: source lesson does not exist`);
     }
