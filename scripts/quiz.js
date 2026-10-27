@@ -150,7 +150,11 @@ function loadQuestion(index) {
   const scenario = document.getElementById('qScenario'); scenario.hidden = !question.scenario; scenario.textContent = question.scenario || '';
   document.getElementById('qExplanation').classList.remove('show');
   const options = document.getElementById('qOptions'); options.replaceChildren(); const chosen = userAnswers[question.id];
-  question.presentedOptions.forEach((option, displayedIndex) => {
+  // Keep the paper's letters in order, including attempts saved with shuffled choices.
+  const presentedOptions = question.sourceExamId
+    ? [...question.presentedOptions].sort((left, right) => left.originalIndex - right.originalIndex)
+    : question.presentedOptions;
+  presentedOptions.forEach((option, displayedIndex) => {
     const button = document.createElement('button'); button.type = 'button'; button.className = 'quiz-opt'; button.dataset.optionIndex = option.originalIndex;
     button.textContent = `${question.sourceExamId ? 'ABCDE'[option.originalIndex] : ['أ','ب','ج','د','هـ'][displayedIndex]}. ${option.text}`; button.setAttribute('aria-pressed', String(chosen === option.originalIndex));
     if (chosen !== undefined) {

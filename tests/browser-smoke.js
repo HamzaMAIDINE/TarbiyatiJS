@@ -187,6 +187,22 @@ async function browserSmoke() {
     await evaluate("location.hash='#mod-1-s3'");
     await waitFor("location.hash==='#mod-4-s1'&&document.activeElement.id==='mod-4-s1'");
     await waitFor(panelAtTop('#mod-4-s1'),'moved competency lesson opens in pedagogy');
+    for (const width of [320,375,600,1440]) {
+      await send('Emulation.setDeviceMetricsOverride',{width,height:812,deviceScaleFactor:1,mobile:width<=800});
+      const table = await evaluate(`(()=>{
+        const table=document.querySelector('#mod-4-s1 .data-table'),wrapper=table.closest('.table-responsive');
+        return {pageFits:document.documentElement.scrollWidth<=innerWidth+1,
+          wrapperFits:wrapper.getBoundingClientRect().right<=innerWidth+1&&wrapper.getBoundingClientRect().left>=-1,
+          width:table.getBoundingClientRect().width,scrolls:wrapper.scrollWidth>wrapper.clientWidth,
+          wordWrap:getComputedStyle(table).overflowWrap,
+          headingsFit:[...table.querySelectorAll('th')].every(cell=>{const range=document.createRange();range.selectNodeContents(cell);return range.getBoundingClientRect().height<=parseFloat(getComputedStyle(cell).lineHeight)+1;})};
+      })()`);
+      assert(table.pageFits&&table.wrapperFits&&table.headingsFit&&table.width>=640&&table.wordWrap==='normal','readable lesson table at '+width);
+      if (width<=600) assert(table.scrolls,'phone table scrolls inside its wrapper at '+width);
+    }
+    await send('Emulation.setDeviceMetricsOverride',{width:375,height:812,deviceScaleFactor:1,mobile:true});
+    await evaluate("document.querySelector('#mod-4-s1 .table-responsive').scrollIntoView({block:'center',behavior:'instant'})");
+    await screenshot('lesson-table-mobile');
     await evaluate("collapseAllModules();clearModuleFilters()");
     await waitFor("[...document.querySelectorAll('.accordion-body')].every(panel=>panel.hidden)");
     await screenshot('modules-mobile');
@@ -535,6 +551,13 @@ async function browserSmoke() {
     assert.equal(await evaluate("document.querySelector('[data-click=\"speakCurrentQuestion\"], [data-speech-player], audio')===null"),true);
 
     step='quiz resume, exam secrecy, results and history';
+    await evaluate("document.getElementById('sourceSelect').value='exam-2025';startQuiz()");
+    await waitFor("!quizBusy&&quizAttempt.config.source==='exam-2025'");
+    const storedOptions = await evaluate('activeQuestions[0].presentedOptions');
+    await evaluate('activeQuestions[0].presentedOptions.sort((a,b)=>b.originalIndex-a.originalIndex);loadQuestion(0)');
+    assert.deepEqual(await evaluate("[...document.querySelectorAll('#qOptions button')].map(button=>({index:Number(button.dataset.optionIndex),letter:button.textContent[0]}))"),
+      storedOptions.map(option=>option.originalIndex).sort((a,b)=>a-b).map(index=>({index,letter:'ABCDE'[index]})),
+      'saved shuffled paper choices display in A-B-C order with their original answer indices');
     await click('#modeToggleBtn');await waitFor("isExamMode&&quizAttempt.mode==='exam'&&!quizBusy");
     await click('#qOptions button');await waitFor('Object.keys(userAnswers).length===1&&!quizBusy');
     const attempt=await evaluate('({id:quizAttempt.id,deadline:timerDeadline,answers:userAnswers,questions:activeQuestions})');
@@ -781,7 +804,9 @@ async function browserSmoke() {
     await evaluate("switchAdminTab('mail')");await click('#btnRetryMailTab');
     await waitFor("!document.getElementById('btnRetryMailTab').disabled");
     await evaluate("document.getElementById('mailFilterSelect').value='failed';document.getElementById('mailFilterSelect').dispatchEvent(new Event('change',{bubbles:true}))");
-    await waitFor("document.getElementById('mailJobsTableBody').textContent.includes('لا توجد رسائل مطابقة')");
+    // Expired or replaced verification codes remain in the failed-mail history.
+    const failedJobs=(await f.request('/api/admin/mail-jobs?status=failed',undefined,admin.cookie)).body.jobs;
+    await waitFor(failedJobs.length ? `document.querySelectorAll('#mailJobsTableBody tr').length===${failedJobs.length}&&[...document.querySelectorAll('#mailJobsTableBody tr')].every(row=>row.textContent.includes('تعذر إرسالها'))` : "document.getElementById('mailJobsTableBody').textContent.includes('لا توجد رسائل مطابقة')");
     await evaluate("switchAdminTab('overview')");
     await evaluate(`window.adminOriginalFetch=window.fetch;window.fetch=(url,options)=>String(url)==='/api/admin/overview'?Promise.resolve(new Response(JSON.stringify({error:'Test unavailable'}),{status:503,headers:{'Content-Type':'application/json'}})):window.adminOriginalFetch(url,options);document.querySelectorAll('.toast').forEach(el=>el.remove());`);
     await click('#btnRefreshData');await waitFor("!document.getElementById('btnRefreshData').disabled");

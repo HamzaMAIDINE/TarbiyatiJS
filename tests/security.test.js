@@ -56,7 +56,9 @@ test('all page scripts and controls can run under the enforced script policy', (
     assert(!/\bon(?:click|input|change|keydown)\s*=/.test(source),filename);
     for (const script of source.matchAll(/<script\b([^>]*)>/g)) {
       const src = script[1].match(/src="([^"]+)"/); assert(src,`Inline script in ${filename}`);
-      assert(fs.existsSync(path.resolve(root,path.dirname(filename),src[1])),`Missing script in ${filename}`);
+      const url = new URL(src[1], 'https://tarbiyati.invalid/' + filename);
+      assert.equal(url.origin, 'https://tarbiyati.invalid', `External script in ${filename}`);
+      assert(fs.existsSync(path.resolve(root, '.' + decodeURIComponent(url.pathname))),`Missing script in ${filename}: ${src[1]}`);
     }
   }
 });

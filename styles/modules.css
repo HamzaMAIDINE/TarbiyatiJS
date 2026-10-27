@@ -14,6 +14,11 @@
 .lesson-answer p { margin-top: .6rem; }
 .module-checkpoint { padding: 1.25rem; margin-top: 2rem; border: 1px solid var(--primary); border-radius: 10px; line-height: 1.9; }
 .lesson-section { scroll-margin-top: 100px; min-width: 0; }
+@media screen {
+  .module-body-text .table-responsive { max-width: 100%; }
+  .module-body-text .data-table { min-width: 40rem; overflow-wrap: normal; word-break: normal; }
+  .module-body-text .data-table th { white-space: nowrap; }
+}
 .module-workshop { scroll-margin-top: 100px; margin-block: 2rem; padding: 1.25rem; border: 1px solid var(--primary); border-radius: 12px; background: var(--gray-bg); line-height: 1.9; }
 .module-workshop:focus { outline: 2px solid var(--primary); outline-offset: 6px; }
 .module-workshop h3 { margin-block: .5rem 1rem; }
